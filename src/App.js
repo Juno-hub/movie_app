@@ -7,7 +7,7 @@ const foodILike = [
     name : "떡볶이",
     image : "https://t1.daumcdn.net/liveboard/dailylife/0b1c21d15a10471bafd70ae6a7a74802.jpg",
     location : "엽기떡볶이",
-    rating : 5.0
+    rating : "5.0"
     
   },
   { 
@@ -29,7 +29,7 @@ const foodILike = [
     name : "라면",
     image : "https://lh3.googleusercontent.com/proxy/pQ37OPYCDtA1M97rtR_dgLcBRfWPgv9cMtOYxt0yeRoJ4XMNsgLTpGeCabGRe6SKDr2a178ArEg1kdCWG17_FOlEcFsDxJAzVynqeA",
     location : "편의점_마크정식",
-    rating : 4.0
+    rating : "4.0"
   }
 ];
 
@@ -48,7 +48,10 @@ Food.propTypes = {
   name : PropTypes.string.isRequired,
   picture : PropTypes.string.isRequired,
   recommend : PropTypes.string.isRequired,
-  rating :  PropTypes.number
+  rating : PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 };
 
 function App() {
